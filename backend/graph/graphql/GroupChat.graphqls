@@ -1,0 +1,28 @@
+type GroupChat{
+    id: ID!
+    message: String!
+    type: String!
+    room: GroupRoom! @goField(forceResolver: true)
+    user: User! @goField(forceResolver: true)
+    createdAt: Time!
+}
+
+input NewGroupChat{
+    groupRoomId: ID!
+    userId: ID!
+    message: String!
+    file: Upload
+}
+
+extend type Query{
+    getGroupChat(groupRoomId: ID!): [GroupChat!]!
+    getGroupChatUsers(groupRoomId: ID!): [User!]!
+}
+
+extend type Mutation{
+    createGroupChat(inputGroupChat: NewGroupChat!): GroupChat!
+}
+
+extend type Subscription{
+    groupChatCreated(userId: ID!, groupRoomId: ID!): [GroupChat!]!
+}

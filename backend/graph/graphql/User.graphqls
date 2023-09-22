@@ -1,0 +1,64 @@
+directive @goField(forceResolver: Boolean, name: String) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+directive @auth on FIELD_DEFINITION
+scalar Any
+# scalar Time
+# scalar Upload
+
+type User{
+    id: ID!
+    firstname: String!
+    lastname: String!
+    email: String!
+    dob: Time!
+    gender: String!
+    image: String!
+    isVerified: Boolean!
+    posts: [Post!]!
+    comments: [Comment!]!
+    stories: [Story!]!
+    notifications: [Notification!]!
+}
+
+type UserEdge{
+    cursor: ID!
+    node: User
+}
+
+type UserConnection{
+    edges: [UserEdge!]!
+    pageInfo: PageInfo!
+}
+
+
+input OldUser{
+    email: String!
+    password: String!
+}
+
+input NewUser{
+    firstname: String!
+    lastname: String!
+    email: String!
+    password: String!
+    dob: Time!
+    gender: String!
+    image: Upload
+}
+
+type Query{
+    getUser(id: ID!):User!
+    getAllUser: [User!]!
+    getSearchUser(str: String!): [User!]!
+}
+
+type Mutation{
+    createUser(inputUser: NewUser!): User!
+    updateUser(id: ID!, inputUser: NewUser!): User!
+    verifyUser(email: String!):User!
+    login(inputUser: OldUser!): LoginResponse
+}
+
+type LoginResponse {
+  token: String!
+  user: User!
+}

@@ -1,0 +1,30 @@
+.container {
+    height: 100%;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

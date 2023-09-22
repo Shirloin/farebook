@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.content {
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container:hover {
+    background: #efefef;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}

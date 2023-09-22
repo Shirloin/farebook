@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+    color: black;
+}
+
+.top {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.bot {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.popup {
+    z-index: 20;
+    font-size: 18px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup li {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.popup li:hover {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.name {
+    font-size: 20px;
+}

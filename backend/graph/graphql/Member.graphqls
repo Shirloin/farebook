@@ -1,0 +1,33 @@
+type Member {
+    id: ID!
+    user: User! @goField(forceResolver: true)
+    role: String!
+    joinedAt: Time!
+    group: Group! @goField(forceResolver: true)
+    confirmed: Boolean!
+}
+
+input NewMember {
+    userId: String!
+    groupId: String!
+    role: String!
+    confirmed: Boolean!
+}
+
+extend type Query {
+    getMember(id: ID!): [Member!]!
+    getAdmin(id: ID!): [Member!]!
+    isMember(groupId: ID!, userId: ID!): String!
+    isMemberById(id: ID!): String!
+    isAdmin(groupId: ID!, userId: ID!): String!
+    getNonMemberFriend(id: ID!, groupId: ID!): [User!]!
+}
+
+extend type Mutation {
+    joinGroup(inputMember: NewMember!): Member!
+    leaveGroup(groupId: ID!, userId: ID!): Member!
+    inviteMember(groupId: ID!, userId: ID!, memberId: ID!): Member!
+    confirmMember(id: ID!): Member!
+    deleteMember(id: ID!): Member!
+    promoteMember(id: ID!): Member!
+}

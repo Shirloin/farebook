@@ -1,0 +1,42 @@
+type Post{
+    id: ID!
+    content: String!
+    file: [File!]!
+    user: User! @goField(forceResolver: true)
+    createdAt: Time!
+    comment: [Comment!]! @goField(forceResolver: true)
+    privacy: String!
+    group: Group
+}
+
+type PostEdge{
+    cursor: ID!
+    node: Post
+}
+
+type PostConnection{
+    edges: [PostEdge!]!
+    pageInfo: PageInfo!
+}
+
+input NewPost{
+    userId: String!
+    content: String!
+    file: [Upload!]!
+    privacy: String!
+    groupId: String
+}
+
+extend type Query{
+    getPost(id: ID!): Post!
+    getUserPost(id: ID!): [Post!]!
+    getAllPost: [Post!]!
+    getSearchPost(str: String!): [Post!]!
+    getGroupPost(id: ID!): [Post!]!
+}
+
+extend type Mutation{
+    createPost(inputPost: NewPost!):Post!
+    updatePostPrivacy(id: ID!, privacy: String!): Post!
+    deletePost(id: ID!):Post!
+}

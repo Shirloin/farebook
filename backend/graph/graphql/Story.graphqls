@@ -1,0 +1,24 @@
+type Story{
+    id: ID!
+    content: String!
+    user: User! @goField(forceResolver: true)
+    createdAt: Time!
+    privacy: String!
+}
+
+input NewStory{
+    userId: String!
+    file: String!
+    privacy: String!
+}
+
+extend type Query{
+    getMyStory(id: String!): [Story!]!
+    getFriendStory(id: String!): [Story!]!
+    getStoryByUser(id: String!): User!
+    getStoryByFriend(id: String!): [User!]!
+}
+
+extend type Mutation{
+    createStory(inputStory: NewStory!): Story!
+}

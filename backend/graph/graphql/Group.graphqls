@@ -1,0 +1,28 @@
+type Group {
+    id: ID!
+    name: String!
+    privacy: String!
+    image: String!
+    createdAt: Time!
+    members: [Member!]! @goField(forceResolver: true)
+    posts:[Post!]!
+    room: GroupRoom! @goField(forceResolver: true)
+}
+
+input NewGroup {
+    name: String!
+    privacy: String!
+    image: Upload
+}
+
+extend type Query {
+    getMyGroup(id: ID!): [Group!]!
+    getAllGroup:[Group!]!
+    getGroup(id: ID!): Group!
+}
+
+extend type Mutation {
+    createGroup(inputGroup: NewGroup!): Group!
+    updateGroup(id: ID!, inputGroup: NewGroup!): Group!
+    deleteGroup(id: ID!): Group!
+}

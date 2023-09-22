@@ -1,0 +1,9 @@
+type PageInfo{
+    endCursor: String
+    hasNextPage: Boolean!
+}
+
+extend type Query{
+    getLimitPosts(limit: Int!, after: String):PostConnection
+    getLimitUsers(limit: Int!, after: String):UserConnection
+}

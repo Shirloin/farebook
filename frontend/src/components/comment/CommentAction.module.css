@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    max-width: 140px;
+    display: flex;
+    justify-content: space-between;
+    color: #787878;
+    font-weight: bold;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn:hover {
+    text-decoration-line: underline;
+}

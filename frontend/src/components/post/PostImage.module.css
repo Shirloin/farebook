@@ -1,0 +1,25 @@
+.container {
+    max-height: 600px;
+    height: 100%;
+    width: 100%;
+}
+
+.container img {
+    width: 100%;
+    min-width: 550px;
+    height: 600px;
+    object-fit: contain;
+    border: 1px solid black;
+}
+
+.video {
+    width: 100%;
+    min-width: 550px;
+    height: 600px;
+    object-fit: contain;
+    border: 1px solid black;
+}
+
+hr {
+    border-top: 1px solid rgb(200, 200, 200);
+}

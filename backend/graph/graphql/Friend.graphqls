@@ -1,0 +1,25 @@
+type Friend{
+    user_one: ID!
+    user_two: ID!
+    status: Boolean!
+}
+
+input InputFriend{
+    user_one: String!
+    user_two: String!
+}
+
+extend type Query{
+    getFriend(id: ID!):[User!]!
+    getFriendRequest(id: ID!):[User!]!
+    getPeopleYouMayKnow(id: ID!):[User!]!
+    getMutuals(inputFriend: InputFriend!):[User!]!
+    isFriend(inputFriend: InputFriend!): Boolean!
+    
+}
+
+extend type Mutation{
+    addFriend(inputFriend :InputFriend!):Friend!
+    confirmFriendRequest(inputFriend :InputFriend!):Friend!
+    removeFriendRequest(inputFriend :InputFriend!):Friend!
+}

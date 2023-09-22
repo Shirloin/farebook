@@ -1,0 +1,27 @@
+.create {
+    background: #1778F2;
+    color: white;
+    font-size: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f6f6f6;
+    /* min-width: 230px; */
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.invite {
+    display: flex;
+    background: #f6f6f6;
+}
+
+.invite:hover {
+    background: gainsboro;
+}

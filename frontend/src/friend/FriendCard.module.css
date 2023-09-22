@@ -1,0 +1,53 @@
+.container {
+    position: relative;
+    width: 180px;
+    min-height: 300px;
+    box-shadow: rgba(110, 110, 110, 0.35) 0px 2px 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2px;
+    background: white;
+}
+
+.top {
+    height: 100%;
+    width: 100%;
+    /* background: red; */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bot {
+    height: 100%;
+    bottom: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bot-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.btn1 {
+    background: #E7F3FF;
+    color: #1877F2;
+}
+
+.btn2 {
+    background: #1877F2;
+    color: white;
+}

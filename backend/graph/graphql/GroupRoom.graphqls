@@ -1,0 +1,14 @@
+type GroupRoom{
+    id: ID!
+    group: Group!  @goField(forceResolver: true)
+}
+
+extend type Query{
+    getGroupRoom(id: ID!): GroupRoom!
+    getMyGroupRoom(id: ID!): [GroupRoom!]!
+}
+
+extend type Mutation{
+    createGroupRoom(id: ID!): GroupRoom!
+    deleteGroupRoom(id: ID!): GroupRoom!
+}

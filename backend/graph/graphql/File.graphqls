@@ -1,0 +1,6 @@
+type File{
+    id: ID!
+    name: String!
+    type: String!
+    post: Post! @goField(forceResolver: true)
+}

@@ -1,0 +1,53 @@
+.container {
+    position: relative;
+}
+
+.nav {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid black;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.navinside {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+}
+
+.navbody {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+}
+
+.left {
+    width: 100%;
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.input {
+    max-width: 200px;
+}
+
+.logo {
+    color: #1778F2;
+}
+
+.login-btn {
+    max-width: 100px;
+    color: white;
+    background: #1778F2;
+}

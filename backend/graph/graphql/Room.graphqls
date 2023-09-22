@@ -1,0 +1,23 @@
+# directive @goField(
+# 	forceResolver: Boolean
+# 	name: String
+#   omittable: Boolean
+# ) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+type Room{
+    id: ID!
+    user_one: User! @goField(forceResolver: true)
+    user_two: User! @goField(forceResolver: true)
+}
+
+input NewRoom{
+    user_one_id: ID!
+    user_two_id: ID!
+}
+
+extend type Query{
+    getRoom(inputRoom: NewRoom!): Room!
+}
+
+extend type Mutation{
+    createRoom(inputRoom: NewRoom!): Room!
+}

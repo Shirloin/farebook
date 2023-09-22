@@ -1,0 +1,28 @@
+type Notification{
+    id: ID!
+    sender: User! @goField(forceResolver: true)
+    receiver: User! @goField(forceResolver: true)
+    message: String!
+    content: String!
+    type: String!
+    createdAt: Time!
+    status: Boolean!
+}
+
+input NewNotification{
+    senderId: String!
+    receiverId: String
+    message: String!
+    content: String
+    type: String!
+}
+
+extend type Query{
+    getNotification(id: ID!): [Notification!]!
+}
+
+extend type Mutation{
+    createNotification(inputNotif: NewNotification!): Notification!
+    sendNotification(id: ID!, type: String!): [User!]!
+    updateNotificationStatus(id: ID!): Notification!
+}

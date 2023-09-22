@@ -1,0 +1,70 @@
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: black; */
+}
+
+.content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+}
+
+.icon {
+    top: 50%;
+    position: absolute;
+    background: white;
+    color: gray;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 100%;
+    line-height: 45px;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+    z-index: 10;
+}
+
+.icon:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.icon:first-child {
+    left: 0px;
+    /* display: none; */
+}
+
+.icon:last-child {
+    right: 0px;
+}
+
+.carousel {
+    /* background: black; */
+    position: relative;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    scroll-behavior: smooth;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 16px;
+}
+
+.carousel * {
+    /* object-fit: fill; */
+    /* width: 100%; */
+}
+
+.carousel :first-child {
+    margin-left: 0px;
+}

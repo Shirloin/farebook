@@ -1,0 +1,25 @@
+.container {
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.left,
+.img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.right {
+    width: 100%;
+}
+
+.container:hover {
+    background: gainsboro;
+}

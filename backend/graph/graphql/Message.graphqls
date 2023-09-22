@@ -1,0 +1,36 @@
+# directive @goField(
+# 	forceResolver: Boolean
+# 	name: String
+#   omittable: Boolean
+# ) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+scalar Time
+scalar Upload
+
+type Message{
+    id: ID!
+    message: String!
+    type: String!
+    room: Room! @goField(forceResolver: true)
+    user: User! @goField(forceResolver: true)
+    createdAt: Time!
+}
+
+input NewMessage{
+    roomID: String!
+    userId: String!
+    message: String!
+    file: Upload
+}
+
+extend type Query{
+    getMessages(roomId: String!): [Message!]!
+    getUsers(roomId: String!): [User!]!
+}
+
+extend type Mutation{
+    createMessage(inputMessage: NewMessage!): Message!
+}
+
+type Subscription{
+    messageCreated(userId: String!, roomId: String!): [Message!]!
+}
